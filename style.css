@@ -1,0 +1,102 @@
+/* Hauptseiten-Stylesheet */
+
+/* Allgemeine Formatierung */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header-Bild und Überschrift */
+header {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+header img {
+    height: 40px;
+    margin-right: 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+/* Navigationsleiste */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eee;
+    padding: 20px;
+}
+
+nav .button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+nav .button:hover {
+    background-color: #444;
+}
+
+/* Transaktionstabelle */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Gesamtbetrag und Gewinn/Verlust */
+p {
+    font-size: 1.5em;
+}
+
+p.total {
+    font-weight: bold;
+}
+
+p.profit {
+    color: green;
+}
+
+p.profit[data-profit="negative"] {
+    color: red;
+}
+
+
+
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}

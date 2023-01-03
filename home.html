@@ -1,0 +1,39 @@
+<!-- Hauptseiten-Template -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Krypto-Tracker</title>
+</head>
+<body>
+    <h1>Krypto-Tracker</h1>
+    <h2>Transaktionen</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Datum</th>
+                <th>Provider</th>
+                <th>Betrag</th>
+                <th>Preis</th>
+                <th>Kauf/Verkauf</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction.date }}</td>
+                <td>{{ transaction.provider.name }}</td>
+                <td>{{ transaction.amount }}</td>
+                <td>{{ transaction.price }}</td>
+                <td>{% if transaction.buy %}Kauf{% else %}Verkauf{% endif %}</td>
+            </tr>
+            <p class="profit" data-profit="negative">-100</p>
+
+            {% endfor %}
+            
+            </table>
+            
+            <p>Gesamtbetrag: {{ total }}</p>
+            <p class="profit" data-profit="{% if profit >= 0 %}positive{% else %}negative{% endif %}">Gewinn/Verlust: {{ profit }}</p>
+    <a href="{{ url_for('update') }}">Transaktionen aktualisieren</a>
+</body>
+</html>
